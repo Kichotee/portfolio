@@ -1,0 +1,19 @@
+%container{
+    margin: 0 5%;
+}
+%btn {
+    padding: 2vh 4vh;
+    border-bottom: 1px solid $black;
+    width:80%;
+    transition: all 0.75s;
+    &:hover{
+        background:$black;
+        color: #343434;
+    }
+}
+.container{
+    @extend %container;
+}
+.btn{
+    @extend %btn;
+}
