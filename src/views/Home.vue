@@ -2,16 +2,36 @@
 <div class="container">
     <div class="container-box">
         <div class="img-box">
-            <img src="../assets/images/AREmoji_20220521_174657_5823.png" alt="">
+            <img src="../assets/images/AREmoji_20220522_090519_2937.png" alt="">
         </div>
+       
         <div class="content-box">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit distinctio expedita autem pariatur perferendis quia tempora provident voluptate nostrum esse? 
-            </p>
+            <div class="paragraph">
+                <div class="paragraph-box">
+
+
+            <p id="info" ref="detailText"></p>
+                </div>
+
+               
+            
+            </div>
             <ul>
+                <router-link to='/works'>
+
                 <li class="btn">Works</li>
+
+                </router-link>
+                <router-link to='/about'>
+
                 <li class="btn">About</li>
+
+                </router-link>
+                <router-link to='/'>
+
                 <li class="btn">Contact</li>
+
+                </router-link>
             </ul>
         </div>
     </div>
@@ -21,7 +41,27 @@
 </template>
 
 <script>
+import { RouterView, RouterLink } from "vue-router";
+import {ref, onMounted } from 'vue'
+
 export default {
+    setup(){
+        //
+         let text = 'Hi, Im Timi a frontend developer who builds usable and aesthetically pleasing web pages and as you can see i have a halo... or maybe you\'re on mobile'
+            let i =0;
+        onMounted(()=>{
+            const info = document.querySelector('#info')
+           
+           const textInt=  setInterval(() => {
+                info.innerHTML += text[i];
+                i++;
+
+                if (i===text.length) {
+                    clearInterval(textInt) 
+                }
+            }, 100);
+        })
+    }
 
 }
 </script>
@@ -39,6 +79,8 @@ export default {
     text-align: center;
     z-index: 40;
     position: relative;
+    overflow: hidden;
+
 
     .container-box {
         display: grid;
@@ -52,25 +94,42 @@ export default {
     grid-column: 1/-1;
     display: flex;
     justify-content: center;
+    
+    
 
     img {
         min-width: 60%;
     }
 }
 
+
 .content-box {
     grid-column: 1/-1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
+   
+    .paragraph-box{
+            background-color: blue;
 
-    p {
-        font-size: 0.7em;
-        margin: 0 0 10%;
     }
+    p {
+        font-size: 0.6em;
+        margin: 0 0 10%;
+            
 
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
     li {
         list-style-type: none
+        
     }
 }
+@import '../assets/scss/desktopresponsiveness.scss';
+
 </style>
