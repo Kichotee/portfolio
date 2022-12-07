@@ -17,21 +17,27 @@
             
             </div>
             <ul>
+
+                <li class="btn">
                 <router-link to='/works'>
-
-                <li class="btn">Works</li>
-
+                    Works
                 </router-link>
+                </li>
+
+
+                <li class="btn">
                 <router-link to='/about'>
-
-                <li class="btn">About</li>
-
+                    About
                 </router-link>
-                <router-link to='/'>
+                </li>
 
-                <li class="btn">Contact</li>
 
+                <li class="btn">
+                <router-link to='/contact'>
+                    Contact
                 </router-link>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -86,6 +92,7 @@ export default {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 200px;
+        height: 100%;
     }
 
 }
@@ -98,7 +105,7 @@ export default {
     
 
     img {
-        min-width: 60%;
+        // width: 90%;
     }
 }
 
@@ -109,9 +116,12 @@ export default {
     flex-direction: column;
     align-items: center;
     z-index: 2;
+    height: 100%;
+    width: 100%;
    
     .paragraph-box{
             background-color: blue;
+            height: max-content;
 
     }
     p {
@@ -124,10 +134,16 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 2vh;
+        width: 100%;
+        align-items: center;
     }
     li {
         list-style-type: none
         
+    }
+    .btn{
+        height: 3vh;
+        width: 50%;
     }
 }
 @import '../assets/scss/desktopresponsiveness.scss';
