@@ -9,12 +9,12 @@ const routes =[
     {
         path:'/works',
         name:'works',
-        component:()=>import('./views/works.vue')
+        component:()=>import('./views/Works.vue')
     },
     {
         path:'/about',
         name:'about',
-        component:()=>import('./views/about.vue')
+        component:()=>import('./views/About.vue')
     }
 ]
 const router =createRouter({

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container-box">
-        <video src="../assets/images/20221207_132552_1.mp4" autoplay loop></video>
+        <video src=".././assets/images/20221207_132552_1.mp4" autoplay loop></video>
         <div class="about">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi tempore quidem aliquid mollitia possimus suscipit ab eaque ratione officiis ipsa iste, sint consectetur, non dolor id. Magnam, soluta repellendus?

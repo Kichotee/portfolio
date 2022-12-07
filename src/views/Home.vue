@@ -2,7 +2,7 @@
 <div class="container">
     <div class="container-box">
         <div class="img-box">
-            <img src="../assets/images/AREmoji_20220522_090519_2937.png" alt="">
+            <img src=".././assets/images/AREmoji_20220522_090519_2937.png" alt="">
         </div>
        
         <div class="content-box">
