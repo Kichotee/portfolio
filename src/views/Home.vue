@@ -32,11 +32,7 @@
                 </li>
 
 
-                <li class="btn">
-                <router-link to='/contact'>
-                    Contact
-                </router-link>
-                </li>
+               
 
             </ul>
         </div>

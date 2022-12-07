@@ -4,15 +4,17 @@
     <div class="container">
         <div class="container-box">
 
-            <div class="works">
+            <div class="works" style="">
                 <div v-for="work in works" key="work" class="work-box">
                     <h4>{{work.title}}</h4>
                     <div class="buttons">
 
-                    <a href="" class="btn"> View live site </a>
-                    <a href="" class="btn"> View repo</a>
-
+                        <a href="" class="btn"> View live site </a>
+                        <a href="" class="btn"> View repo</a>
                     </div>
+                    <!-- <img src="/assets/images/bg-2.png" alt=""> -->
+                    <img :src="`${work.bg}`" alt="">
+
                 </div>
 
             </div>
@@ -23,30 +25,19 @@
 </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            works: [{
-                    title: 'clinicplus',
-                    description: 'A frontend app for a telemedicine service',
-                    tools: 'vue, composition-api, gsap'
-                },
-                {
-                    title: 'space-app',
-                    description: 'A space tourism website',
-                    tools: 'vue, composition-api, pinia, tailwind'
-                },
-                {
-                    title: 'space-app',
-                    description: 'A space tourism website',
-                    tools: 'vue, composition-api, pinia, tailwind'
-                },
-            ]
-        }
-    }
+<script setup>
+import {
+    useDataStore
+} from "../store/index.js";
 
-}
+    
+const data = useDataStore();
+const works= data.works
+console.log(works.works);
+        
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -85,8 +76,11 @@ export default {
         align-items: center;
         justify-content: center;
         text-transform: capitalize;
+        position: relative;
+        z-index: 40;
     }
-    .buttons{
+
+    .buttons {
         height: 50%;
         width: 100%;
         margin-top: 5%;
@@ -103,9 +97,19 @@ export default {
         width: 30%;
         height: 12%;
         font-size: 0.7em;
-        text-wrap:nowrap;
+        text-wrap: nowrap;
         font-weight: bold;
+        background: $white;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -5;
+
     }
 }
+
 @import '../assets/scss/desktopresponsiveness.scss';
 </style>
