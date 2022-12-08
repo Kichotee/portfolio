@@ -5,18 +5,27 @@
         <div class="container-box">
 
             <div class="works" style="">
-                <div v-for="work in works" key="work" class="work-box">
-                    <h4>{{work.title}}</h4>
+                <div class="direction">
+                    <i @click="preViousItem" class="fa-solid fa-arrow-left"></i>
+                    <i @click="nextItem" class="fa-solid fa-arrow-right"></i>
+
+                </div>
+                <div v-for="(work, index) in works" key="work" v-show="currentData===index" class="work-box">
+                    
                     <div class="buttons">
 
                         <a :href="work.link" class="btn"> View live site </a>
-                        <a href="" class="btn"> View repo</a>
+                        <a :href="work.git" class="btn"> View repo</a>
                     </div>
                     <!-- <img src="/assets/images/bg-2.png" alt=""> -->
                     <img :src="`${work.bg}`" alt="">
 
-                </div>
 
+                </div>
+               <div class="tool-box" v-for="(work, index) in works" key="work" v-show="currentData===index">
+                <h4>{{work.title}}</h4>
+                {{work.tools}}
+               </div>
             </div>
 
         </div>
@@ -29,12 +38,32 @@
 import {
     useDataStore
 } from "../store/index.js";
+import {ref, onMounted} from 'vue'
+onMounted(()=>{
+    const right = document.getElementsByClassName('fa-arrow-right');
+    const left = document.getElementsByClassName('fa-arrow-left')
+  
+})
+
+const currentData = ref(0);
 
     
 const data = useDataStore();
 const works= data.works
-console.log(works.works);
-        
+  const nextItem = ()=>{
+    if ( currentData.value+1 < works.length){
+        currentData.value++
+    }
+    else   currentData.value=0
+}
+ const preViousItem = ()=>{
+    if ( currentData.value+1 > works.length){
+        currentData.value--
+    }
+    else   currentData.value=0
+}
+console.log(currentData.value+1, works.length);
+
 
 
 
@@ -60,17 +89,19 @@ console.log(works.works);
     grid-column: 1/-1;
     position: relative;
     z-index: 42;
-    height: 80vh;
+    height: 70vh;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5%;
 
     .work-box {
         margin: 0 auto;
-        width: 60vw;
+        width: 98%;
         height: 30vh;
         border: solid;
+        box-shadow: 4px 4px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -109,6 +140,27 @@ console.log(works.works);
         z-index: -5;
 
     }
+    .tool-box{
+        text-align: center;
+    }
+    .direction{
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        display: flex;
+         align-items: center;
+        justify-content: space-between;
+        z-index: 43;
+    }
+    i{
+        font-size: 2em;
+        // box-shadow:4px 4px;
+        padding: 2px 5px;
+
+border-radius: 50%;
+background: lighten($color: $black, $amount: 80)
+
+}
 }
 
 @import '../assets/scss/desktopresponsiveness.scss';

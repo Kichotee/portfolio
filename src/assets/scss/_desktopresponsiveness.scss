@@ -147,12 +147,24 @@
         }
 
         .works {
-            flex-direction: row;
+            display: flex;
+    flex-direction: column;
+    justify-content: center;
             align-items: center;
+            .direction{
+                align-items: center;
+                i{
+                    cursor: pointer;
+                }
+                
+            }
         }
 
         .work-box {
             align-items: end;
+            height: 90%;
+            width: 70%;
+
 
         }
 
@@ -160,6 +172,7 @@
             grid-column: 3/-1;
             overflow: scroll;
         }
+       
     }
 
     video {

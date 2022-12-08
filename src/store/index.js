@@ -7,14 +7,16 @@ export const useDataStore = defineStore({
             description: 'A frontend app for a telemedicine service',
             tools: 'vue, composition-api, gsap',
             bg: '/assets/images/bg-1.png',
-            link:'https://clinicplus.netlify.app/'
+            link:'https://clinicplus.netlify.app/',
+            git:'https://github.com/Kichotee/clinicplus'
         },
         {
             title: 'space-app',
             description: 'A space tourism website',
-            tools: 'vue, composition-api, pinia, tailwind',
+            tools: 'vue, composition-api, pinia, scss',
             bg: '/assets/images/bg-2.png',
-            link:'https://the-bazaar.netlify.app/'
+            link:'https://appspace-tourism.netlify.app/',
+            git:'https://github.com/Kichotee/bazaar'
 
         },
         {
@@ -22,7 +24,9 @@ export const useDataStore = defineStore({
             description: 'A space tourism website',
             tools: 'vue, composition-api, pinia, tailwind, vite',
             bg: '/assets/images/bg-3.png',
-            link:'https://appspace-tourism.netlify.app/'
+            link:'https://the-bazaar.netlify.app/',
+            git:'https://github.com/Kichotee/space-agency'
+
 
         },
         ]
