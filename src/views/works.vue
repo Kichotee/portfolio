@@ -9,7 +9,7 @@
                     <h4>{{work.title}}</h4>
                     <div class="buttons">
 
-                        <a href="" class="btn"> View live site </a>
+                        <a :href="work.link" class="btn"> View live site </a>
                         <a href="" class="btn"> View repo</a>
                     </div>
                     <!-- <img src="/assets/images/bg-2.png" alt=""> -->
