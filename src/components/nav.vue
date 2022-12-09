@@ -12,8 +12,8 @@
             </router-link>
             <li>{{date}}</li>
             <li id="btn">
-                <span @click="toggleDark" id="box" class="box">
-                    <span id="ball"></span>
+                <span @click="toggleMove" id="box" class="box">
+                    <span @click="toggleDark" id="ball"></span>
                 </span>
             </li>
 
@@ -54,14 +54,22 @@ export default {
         const hours = date.getHours;
         const minutes = date.getMinutes;
         const darkMode = ref(false)
+        
         onMounted(() => {
             const btn = document.getElementById('btn')
             const box = document.getElementById('box')
             const ball = document.getElementById('ball')
+            const wrapper =  document.getElementById('wrapper')
+            const toggleDark =()=>{
+                console.log(test);
+            }
 
         })
-
-        function toggleDark() {
+         const toggleDark =()=>{
+                wrapper.classList.add('darkmode')
+            }
+        
+        function toggleMove() {
 
             box.classList.toggle('active');
             ball.classList.toggle('move');
@@ -72,7 +80,8 @@ export default {
             activeMenu,
             toggleMenu,
             date,
-            toggleDark
+            toggleMove,
+            toggleDark,
         }
     }
 }
@@ -175,6 +184,7 @@ nav {
 
     }
 }
+@import '../assets/scss/tabresponsiveness.scss';
 
 @import '../assets/scss/desktopresponsiveness.scss';
 </style>

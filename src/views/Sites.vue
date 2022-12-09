@@ -3,8 +3,12 @@
 
     <div class="container">
         <div class="container-box">
+            
 
             <div class="works" style="">
+                <div class="style-box">
+
+            </div>
                
                 <div v-for="(work, index) in works" key="work" v-show="currentData==index" class="work-box">
                      
@@ -66,9 +70,10 @@ const works= data.works
 }
  const preViousItem = ()=>{
     if ( currentData.value+1 > works.length){
-        currentData.value--
+        currentData.value=0 
     }
-    else   currentData.value=0
+       
+    else currentData.value--
 }
 console.log(currentData.value+1, works.length);
 
@@ -82,14 +87,28 @@ console.log(currentData.value+1, works.length);
 @import '../assets/scss/utilities.scss';
 
 .container {
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
+  
 
 }
 
 .container-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+
+
+}
+.style-box{
+    display: none;
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    height: 40%;
+    width: 10%;
+    z-index: -2;
+    border-right: 3px $black solid;
+    border-bottom: 3px $black solid;
 
 }
 
@@ -120,7 +139,7 @@ console.log(currentData.value+1, works.length);
     }
 
     .buttons {
-        height: 50%;
+        height: 100%;
         width: 100%;
         
         display: flex;

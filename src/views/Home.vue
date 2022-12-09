@@ -101,7 +101,9 @@ export default {
     
 
     img {
-        // width: 90%;
+        width: 60%;
+        height: 100%;
+
     }
 }
 
@@ -143,5 +145,7 @@ export default {
     }
 }
 @import '../assets/scss/desktopresponsiveness.scss';
+@import '../assets/scss/tabresponsiveness.scss';
+
 
 </style>

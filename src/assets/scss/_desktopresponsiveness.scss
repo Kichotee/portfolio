@@ -1,4 +1,4 @@
-@media screen and (min-width:900px) {
+@media screen and (min-width:921px) {
     nav {
         ul {
             grid-template-columns: repeat(12, 1fr);
@@ -29,6 +29,9 @@
 
         }
 
+    }
+    .box{
+        display: block;
     }
 
 

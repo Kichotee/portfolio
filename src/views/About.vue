@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/colors.scss';
+@import '../assets/scss/utilities.scss';
+
+
 .container {
     height: 80vh;
     max-height: 80vh !important;
@@ -98,4 +102,7 @@ export default {
     }
 
 }
+@import '../assets/scss/tabresponsiveness.scss';
+@import '../assets/scss/desktopresponsiveness.scss';
+
 </style>
