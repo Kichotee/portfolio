@@ -67,10 +67,12 @@
         align-items: center;
         position: relative;
         height: 100%;
+      
 
         img {
             width: 80%;
             height: 80%;
+            
 
 
         }
@@ -162,7 +164,7 @@
 
         .work-box {
             align-items: end;
-            height: 90%;
+            height: 100%;
             width: 70%;
 
 
@@ -171,6 +173,13 @@
         .about {
             grid-column: 3/-1;
             overflow: scroll;
+        }
+        .tool-box{
+            flex-direction: row;
+            width: 70%;
+            .buttons{
+                flex-direction: row;
+            }
         }
        
     }

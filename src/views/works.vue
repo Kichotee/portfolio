@@ -5,18 +5,15 @@
         <div class="container-box">
 
             <div class="works" style="">
-                <div class="direction">
+               
+                <div v-for="(work, index) in works" key="work" v-show="currentData==index" class="work-box">
+                     
+                        <div class="direction">
                     <i @click="preViousItem" class="fa-solid fa-arrow-left"></i>
                     <i @click="nextItem" class="fa-solid fa-arrow-right"></i>
 
                 </div>
-                <div v-for="(work, index) in works" key="work" v-show="currentData===index" class="work-box">
-                    
-                    <div class="buttons">
-
-                        <a :href="work.link" class="btn"> View live site </a>
-                        <a :href="work.git" class="btn"> View repo</a>
-                    </div>
+                   
                     <!-- <img src="/assets/images/bg-2.png" alt=""> -->
                     <img :src="`${work.bg}`" alt="">
 
@@ -24,8 +21,19 @@
                 </div>
                <div class="tool-box" v-for="(work, index) in works" key="work" v-show="currentData===index">
                 <h4>{{work.title}}</h4>
+                 <div class="buttons">
+            
+                        <a :href="work.link" class="btn"> View live site </a>
+                        <a :href="work.git" class="btn"> View repo</a>
+                    </div>
+                    <p>
                 {{work.tools}}
+
+                    </p>
+                
+                
                </div>
+                
             </div>
 
         </div>
@@ -114,23 +122,27 @@ console.log(currentData.value+1, works.length);
     .buttons {
         height: 50%;
         width: 100%;
-        margin-top: 5%;
-        // border: solid;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        
+            order: 3;
+            width: 100%;
+                        // border: solid;
+
         gap: 2.5%;
 
     }
 
     .btn {
-        width: 30%;
+        width: 40%;
         height: 12%;
         font-size: 0.7em;
-        text-wrap: nowrap;
         font-weight: bold;
         background: $white;
+        white-space: nowrap;
     }
 
     img {
@@ -138,13 +150,29 @@ console.log(currentData.value+1, works.length);
         width: 100%;
         height: 100%;
         z-index: -5;
+          filter: blur(2px);
 
     }
     .tool-box{
+        width: 97%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 35%;
+            // border: solid;
+            align-items: center;
+
+        p{
+            // flex-basis: 40%;
+            width: 100%;
+            // border: solid;
+        }
     }
     .direction{
         position: absolute;
+        top: 50%;
+        translate: 0 -50%;
         width: 100%;
         height: 80%;
         display: flex;
