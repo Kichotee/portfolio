@@ -19,7 +19,7 @@
             <ul>
 
                 <li class="btn">
-                <router-link to='/works'>
+                <router-link to='/sites'>
                     Works
                 </router-link>
                 </li>
