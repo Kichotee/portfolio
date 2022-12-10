@@ -88,7 +88,7 @@ export default {
     .container-box {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 50%;
+        grid-auto-rows: 50% ;
         height: 100%;
     }
 
@@ -103,6 +103,8 @@ export default {
 
     img {
         width: 80%;
+        height: 80%;
+
         
 
     }
