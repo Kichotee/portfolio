@@ -1,0 +1,10 @@
+@function set-text-color($color){
+    @if lightness(color)>70{
+        @return #1b1c1c;
+    }
+    @else {
+        @return #f9f6ee
+    }
+    
+
+}

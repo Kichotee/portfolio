@@ -42,7 +42,10 @@ import {
     RouterView,
     RouterLink
 } from "vue-router";
+import { useToggle } from '@vueuse/shared';
+import { useDark } from '@vueuse/core';
 export default {
+    props:{useToggle, useDark},
     setup() {
         const activeMenu = ref(false)
 
@@ -53,21 +56,14 @@ export default {
 
         const hours = date.getHours;
         const minutes = date.getMinutes;
-        const darkMode = ref(false)
         
         onMounted(() => {
             const btn = document.getElementById('btn')
             const box = document.getElementById('box')
-            const ball = document.getElementById('ball')
-            const wrapper =  document.getElementById('wrapper')
-            const toggleDark =()=>{
-                console.log(test);
-            }
-
+            const ball = document.getElementById('ball');
+            const wrapper = document.getElementById('wrapper');
         })
-         const toggleDark =()=>{
-                wrapper.classList.add('darkmode')
-            }
+       
         
         function toggleMove() {
 
@@ -75,13 +71,16 @@ export default {
             ball.classList.toggle('move');
 
         }
+        const toggleDark =()=>{
+            wrapper.classList.toggle('dark')
+        }
 
         return {
             activeMenu,
             toggleMenu,
             date,
             toggleMove,
-            toggleDark,
+            toggleDark
         }
     }
 }
@@ -90,6 +89,8 @@ export default {
 <style lang="scss">
 @import '../assets/scss/colors.scss';
 @import '../assets/scss/utilities.scss';
+@import '../assets/scss/darkMode.scss';
+
 
 nav {
     height: 10vh;
@@ -106,6 +107,9 @@ nav {
         gap: 2%;
         font-size: 0.6em;
         place-items: center;
+        a{
+            
+        }
 
         p {
             font-size: 1.4em;
@@ -184,6 +188,7 @@ nav {
 
     }
 }
+
 @import '../assets/scss/tabresponsiveness.scss';
 
 @import '../assets/scss/desktopresponsiveness.scss';

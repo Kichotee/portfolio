@@ -72,6 +72,7 @@ export default {
 @import '../assets/scss/colors.scss';
 @import '../assets/scss/utilities.scss';
 
+
 .container {
     // overflow: hidden;
     // border: solid;

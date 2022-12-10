@@ -1,14 +1,18 @@
 <script setup>
 import {
     RouterView
-} from 'vue-router'
+} from 'vue-router';
+import {useDark, useToggle} from '@vueuse/core';
 import navView from './components/nav.vue';
+
+
+
 </script>
 
 <template>
 <div class="wrapper " id="wrapper">
 
-    <navView />
+    <navView :useToggle='useToggle' :useDark='useDark' />
     <div class="text-box">
         <p>
             TIMI
@@ -16,6 +20,8 @@ import navView from './components/nav.vue';
        
 
     </div>
+    
+   
     <div class="circle">
 
     </div>
@@ -27,17 +33,7 @@ import navView from './components/nav.vue';
 
         </marquee>
        
-            <div class="box box-1">
-                <p>
-                    design
-                </p>
-            </div>
-            <div class="box box-2">
-                <p>iterate</p>
-            </div>
-            <div class="box box-3">
-                <p>create</p>
-            </div>
+            
         
 
     <router-view />
@@ -47,6 +43,13 @@ import navView from './components/nav.vue';
 <style lang="scss" scoped>
 @import './assets/scss/colors.scss';
 @import './assets/scss/utilities.scss';
+.dark{
+    background-color: $black !important;
+    color:$white !important;
+    a{
+        color: $white !important
+    }
+}
 
 .wrapper {
     height: 100vh;
@@ -129,7 +132,59 @@ left:0;
              color: black;
         }
     }
+// darmode button style
+     #btn{
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            background: $black;
+
+
+        }
+  .box {
+            background: $black;
+            width: 100%;
+            height: 50%;
+            position: relative;
+              transition: all 1s;
+
+        }
+      &::before {
+                content: '';
+                background: white;
+                width: 100%;
+                height: 1px;
+                bottom: 10%;
+
+                position: absolute;
+
+            }
+              &>.move {
+              transition: all 1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        margin-left: 76%;
+        background: black;
+        // left: 80%;
+        }
+
+            &>span {
+                content: '';
+                background: white;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                transition: all 1s;
+
+            }
+
+        
 }
+
+        .active {
+            background: blue;
+        }
 @import './assets/scss/tabresponsiveness.scss';
 
 @import './assets/scss/desktopresponsiveness.scss';
