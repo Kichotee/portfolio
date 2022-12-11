@@ -152,6 +152,12 @@ ins {
 .dark a{
   color: #f9f6ee;
 }
+.buttons a{
+  color: #1b1b1c;
+}
+.works i{
+  color: #1b1b1c;
+}
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;

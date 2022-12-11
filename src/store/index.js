@@ -11,7 +11,7 @@ export const useDataStore = defineStore({
             git:'https://github.com/Kichotee/clinicplus'
         },
         {
-            title: 'space-app',
+            title: 'bazaar',
             description: 'A space tourism website',
             tools: 'vue, composition-api, pinia, scss',
             bg: '/assets/images/bg-2.png',
@@ -24,7 +24,7 @@ export const useDataStore = defineStore({
             description: 'A space tourism website',
             tools: 'vue, composition-api, pinia, tailwind, vite',
             bg: '/assets/images/bg-3.png',
-            link:'https://the-bazaar.netlify.app/',
+            link:'https://appspace-tourism.netlify.app/',
             git:'https://github.com/Kichotee/space-agency'
 
 

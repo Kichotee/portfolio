@@ -13,7 +13,7 @@ import navView from './components/nav.vue';
 <div class="wrapper " id="wrapper">
 
     <navView :useToggle='useToggle' :useDark='useDark' />
-    <div class="text-box">
+    <div v-if="![`Sites`].includes($route.name)" class="text-box">
         <p>
             TIMI
         </p>

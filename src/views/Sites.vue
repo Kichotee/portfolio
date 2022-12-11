@@ -22,14 +22,14 @@
                     </div>
                 </transition-group>
                 <div class="tool-box" v-for="(work, index) in works" key="work" v-show="currentData===index">
-                    <h4>{{work.title}}</h4>
+                    <h4> {{work.title}}</h4>
                     <div class="buttons">
 
                         <a :href="work.link" class="btn"> View live site </a>
                         <a :href="work.git" class="btn"> View repo</a>
                     </div>
                     <p>
-                        {{work.tools}}
+                       Tools: {{work.tools}}
 
                     </p>
 

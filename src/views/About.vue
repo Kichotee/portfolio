@@ -88,6 +88,7 @@ export default {
     video {
         overflow: scroll;
         grid-column: 3/-1;
+        grid-row: 1/-1;
         width: 100%;
         object-fit: cover;
     }
@@ -95,10 +96,17 @@ export default {
     .about {
         grid-column: 1/3;
         overflow: scroll;
+       
 
         p {
             font-size: 2rem;
         }
+    }
+    .about::-webkit-scrollbar{
+        width: 0;
+    }
+    a{
+        text-decoration: underline
     }
 
 }

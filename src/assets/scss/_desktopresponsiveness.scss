@@ -193,12 +193,20 @@
         }
        
     }
-
-    video {
-        grid-column: 1/3;
-        // orientation: landscape;
-
-        height: 80vh;
-
+    .container-box{
+        grid-template-columns: repeat(12,1fr);
+        .about{
+            grid-column: 1/4;
+            justify-items: center;
+        }
+        video {
+            grid-column: 6/-1;
+            // orientation: landscape;
+    
+            height: 100%;
+    
+        }
     }
+
+   
 }
