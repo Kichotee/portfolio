@@ -143,8 +143,10 @@ nav {
 
         .box {
             background: $black;
-            width: 100%;
+            width: 50%;
             height: 50%;
+            justify-items: center;
+            margin-left: 50%;
             position: relative;
               transition: all 1s;
 
@@ -159,8 +161,8 @@ nav {
 
             }
               &>.move {
-              transition: all 1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
-        margin-left: 76%;
+              transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        margin-left: 60%;
         background: black;
         // left: 80%;
         }
@@ -169,6 +171,7 @@ nav {
                 content: '';
                 background: white;
                 border-radius: 50%;
+                border: 1px dotted blue;
                 width: 20px;
                 height: 20px;
                 position: absolute;

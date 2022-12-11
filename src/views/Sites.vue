@@ -3,41 +3,38 @@
 
     <div class="container">
         <div class="container-box">
-            
 
-            <div class="works" style="">
-                <div class="style-box">
+            <div class="works" >
+                
+                <transition-group class="work-box-container"  tag="div" name="imgAnimate" >
+                    <div v-for="(work, index) in works" key="index" v-show="currentData===index" :key='index' class="work-box" >
 
-            </div>
-               
-                <div v-for="(work, index) in works" key="work" v-show="currentData==index" class="work-box">
-                     
                         <div class="direction">
-                    <i @click="preViousItem" class="fa-solid fa-arrow-left"></i>
-                    <i @click="nextItem" class="fa-solid fa-arrow-right"></i>
+                            <i @click="previousItem" class="fa-solid fa-arrow-left"></i>
+                            <i @click="nextItem" class="fa-solid fa-arrow-right"></i>
 
-                </div>
-                   
-                    <!-- <img src="/assets/images/bg-2.png" alt=""> -->
-                    <img :src="`${work.bg}`" alt="">
+                        </div>
 
+                        <transition >
+                            <img :src="`${work.bg}`" alt="">
+                        </transition>
 
-                </div>
-               <div class="tool-box" v-for="(work, index) in works" key="work" v-show="currentData===index">
-                <h4>{{work.title}}</h4>
-                 <div class="buttons">
-            
+                    </div>
+                </transition-group>
+                <div class="tool-box" v-for="(work, index) in works" key="work" v-show="currentData===index">
+                    <h4>{{work.title}}</h4>
+                    <div class="buttons">
+
                         <a :href="work.link" class="btn"> View live site </a>
                         <a :href="work.git" class="btn"> View repo</a>
                     </div>
                     <p>
-                {{work.tools}}
+                        {{work.tools}}
 
                     </p>
-                
-                
-               </div>
-                
+
+                </div>
+
             </div>
 
         </div>
@@ -50,36 +47,31 @@
 import {
     useDataStore
 } from "../store/index.js";
-import {ref, onMounted} from 'vue'
-onMounted(()=>{
+import {
+    ref,
+    onMounted
+} from 'vue'
+onMounted(() => {
     const right = document.getElementsByClassName('fa-arrow-right');
     const left = document.getElementsByClassName('fa-arrow-left')
-  
+
 })
 
 const currentData = ref(0);
 
-    
 const data = useDataStore();
-const works= data.works
-  const nextItem = ()=>{
-    if ( currentData.value+1 < works.length){
+const works = data.works
+const nextItem = () => {
+    if (currentData.value + 1 < works.length) {
         currentData.value++
-    }
-    else   currentData.value=0
+    } else currentData.value = 0
 }
- const preViousItem = ()=>{
-    if ( currentData.value+1 > works.length){
-        currentData.value=0 
-    }
-       
-    else currentData.value--
+const previousItem = () => {
+    if (currentData.value === 0) {
+        currentData.value = 0
+    } else currentData.value--
 }
-console.log(currentData.value+1, works.length);
-
-
-
-
+console.log(currentData.value + 1, works.length);
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +80,6 @@ console.log(currentData.value+1, works.length);
 
 .container {
     overflow: hidden;
-  
 
 }
 
@@ -97,9 +88,9 @@ console.log(currentData.value+1, works.length);
     grid-template-columns: repeat(4, 1fr);
     overflow: hidden;
 
-
 }
-.style-box{
+
+.style-box {
     display: none;
     position: absolute;
     right: 20%;
@@ -112,6 +103,7 @@ console.log(currentData.value+1, works.length);
 
 }
 
+
 .works {
     grid-column: 1/-1;
     position: relative;
@@ -122,17 +114,17 @@ console.log(currentData.value+1, works.length);
     flex-direction: column;
     justify-content: center;
     gap: 5%;
+    .work-box-container{
+        height: 50%;
+        width: 100%;
+    }
 
     .work-box {
         margin: 0 auto;
         width: 98%;
         height: 30vh;
         border: solid;
-        box-shadow: 4px 4px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        
         text-transform: capitalize;
         position: relative;
         z-index: 40;
@@ -141,15 +133,15 @@ console.log(currentData.value+1, works.length);
     .buttons {
         height: 100%;
         width: 100%;
-        
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        
-            order: 3;
-            width: 100%;
-                        // border: solid;
+
+        order: 3;
+        width: 100%;
+        // border: solid;
 
         gap: 2.5%;
 
@@ -169,45 +161,65 @@ console.log(currentData.value+1, works.length);
         width: 100%;
         height: 100%;
         z-index: -5;
-          filter: blur(2px);
+        filter: blur(2px);
 
     }
-    .tool-box{
+
+    .tool-box {
         width: 97%;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 35%;
-            // border: solid;
-            align-items: center;
+        align-items: center;
 
-        p{
+        p {
             // flex-basis: 40%;
             width: 100%;
             // border: solid;
         }
     }
-    .direction{
+
+    .direction {
         position: absolute;
         top: 50%;
         translate: 0 -50%;
         width: 100%;
         height: 80%;
         display: flex;
-         align-items: center;
+        align-items: center;
         justify-content: space-between;
         z-index: 43;
     }
-    i{
+
+    i {
         font-size: 2em;
         // box-shadow:4px 4px;
         padding: 2px 5px;
 
-border-radius: 50%;
-background: lighten($color: $black, $amount: 80)
+        border-radius: 50%;
+        background: lighten($color: $black, $amount: 80)
+    }
+   
 
-}
+    .imgAnimate-enter-from,
+     {
+        opacity: 0;
+       transform: translateX(-450px);
+        
+    }
+    .imgAnimate-leave-to{
+          opacity: 0;
+       transform: translateX(450px);
+
+    }
+
+    .imgAnimate-enter-active,
+    .imgAnimate-leave-active,
+    .imgAnimate-move {
+        transition: all 0.8s ease;
+    }
 }
 
 @import '../assets/scss/desktopresponsiveness.scss';

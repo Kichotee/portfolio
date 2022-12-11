@@ -154,6 +154,7 @@
         .works {
             display: flex;
     flex-direction: column;
+    
     justify-content: center;
             align-items: center;
             .direction{
@@ -161,8 +162,14 @@
                 i{
                     cursor: pointer;
                 }
+              
+               
                 
             }
+        }
+        .work-box-container{
+            height: 100%;
+            width: 100%;
         }
 
         .work-box {

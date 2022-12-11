@@ -44,7 +44,7 @@ import navView from './components/nav.vue';
 @import './assets/scss/colors.scss';
 @import './assets/scss/utilities.scss';
 .dark{
-    background-color: $black !important;
+    background-color: #121212 !important;
     color:$white !important;
     a{
         color: $white !important
@@ -56,6 +56,7 @@ import navView from './components/nav.vue';
     position: relative;
     background-color: $white;
     z-index: 3;
+    transition: all 1s ease;
 
     max-width: 100vw !important;
     
@@ -65,7 +66,7 @@ import navView from './components/nav.vue';
         position: absolute;
         z-index: 1;
         top: 10%;
-        left: -5%;
+        left: 0%;
         // rotate: 90deg;
     }
     .circle{
@@ -80,7 +81,7 @@ import navView from './components/nav.vue';
 
     p {
         width: 100%;
-        font-size: 8em;
+        font-size: 6em;
         z-index: 1;
         color: lighten($color: $black, $amount: 80%);
         text-align: center;

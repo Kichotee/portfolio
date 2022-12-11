@@ -128,6 +128,7 @@ q:before, q:after {
     content:none;
 }
 
+
 a {
     margin:0;
     padding:0;
@@ -140,7 +141,7 @@ a {
 }
 a:active{
   text-decoration: none;
-  color: #000;
+  /* color: #000; */
 }
 /* change colours to suit your needs */
 ins {
@@ -148,7 +149,9 @@ ins {
     color:#000;
     text-decoration:none;
 }
-
+.dark a{
+  color: #f9f6ee;
+}
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
