@@ -20,6 +20,12 @@ import navView from './components/nav.vue';
        
 
     </div>
+    <div class="label">
+        <i class="fa-solid fa-arrow-up"></i>
+        <p>
+            home
+        </p>
+    </div>
     
    
     <div class="circle">
@@ -50,13 +56,17 @@ import navView from './components/nav.vue';
         color: $white !important
     }
 }
+.dark .label p{
+    color: $white !important;
+}
 
 .wrapper {
     height: 100vh;
     position: relative;
     background-color: $white;
     z-index: 3;
-    transition: all 1s ease;
+    transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    
 
     max-width: 100vw !important;
     
@@ -91,49 +101,19 @@ import navView from './components/nav.vue';
         position: absolute;
         bottom: 0;
     }
-    .box{
-        display: none;
-    }
-    
-    .box-1{
+  
+    .label{
         position: absolute;
-      top: 10%;
-right: 0;
-        width: max-content;
-        background: red;
-        rotate: -45deg;
+        left: 12.5%;
+        top: 5%;
         p{
-            font-size: 1.5em
+            font-size:0.7rem;
+            color:$black;
+
         }
     }
-    .box-2{
-        width: max-content;
-      position: absolute;
-      top: 20%;
-right: 0;
-        background: purple;
-        rotate: 0deg;
-        margin-top: 10%;
-        p{
-            font-size: 3em
-        }
-    }
-     .box-3{
-        position: absolute;
-      top: 30%;
-left:0;
-        width: max-content;
-     
-        background: yellow;
-        rotate: 45deg;
-        margin-top: 10%;
-       
-        p{
-            font-size: 1.75em;
-             color: black;
-        }
-    }
-// darmode button style
+   
+// darkmode button style
      #btn{
             width: 10%;
             height: 10%;
@@ -141,51 +121,11 @@ left:0;
             background: $black;
 
 
-        }
-  .box {
-            background: $black;
-            width: 100%;
-            height: 50%;
-            position: relative;
-              transition: all 1s;
-
-        }
-      &::before {
-                content: '';
-                background: white;
-                width: 100%;
-                height: 1px;
-                bottom: 10%;
-
-                position: absolute;
-
-            }
-              &>.move {
-              transition: all 1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
-        margin-left: 76%;
-        background: black;
-        // left: 80%;
-        }
-
-            &>span {
-                content: '';
-                background: white;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                top: 50%;
-                translate: 0 -50%;
-                transition: all 1s;
-
-            }
-
+ 
         
 }
-
-        .active {
-            background: blue;
-        }
+}
+       
 @import './assets/scss/tabresponsiveness.scss';
 
 @import './assets/scss/desktopresponsiveness.scss';

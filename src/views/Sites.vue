@@ -15,9 +15,9 @@
 
                         </div>
 
-                        <transition >
+                        <a :href="work.link" >
                             <img :src="`${work.bg}`" alt="">
-                        </transition>
+                        </a >
 
                     </div>
                 </transition-group>
@@ -30,10 +30,11 @@
                     </div>
                     <p>
                        Tools: {{work.tools}}
-
                     </p>
 
+                   
                 </div>
+                
 
             </div>
 

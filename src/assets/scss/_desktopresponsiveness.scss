@@ -33,6 +33,7 @@
     .box{
         display: block;
     }
+    
 
 
     .wrapper {
@@ -43,12 +44,16 @@
             z-index: 1;
             top: 30%;
             left: 22.5%;
-            // background-color: $black;
             rotate: 90deg;
         }
 
         .circle {
             display: block;
+        }
+        .label{
+            top: 10%;
+            left: 8%;
+           
         }
     }
 
@@ -126,6 +131,9 @@
 
             align-items: end;
             display: flex;
+            #info{
+                font-size: 0.8em;
+            }
 
         }
 

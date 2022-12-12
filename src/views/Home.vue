@@ -119,14 +119,15 @@ export default {
     z-index: 2;
     height: 100%;
     width: 100%;
-   
+   font-size: 0.8em;
     .paragraph-box{
             background-color: blue;
-            height: max-content;
+            height: 70%;
+            padding: 2.5% 5%;
 
     }
     p {
-        font-size: 0.6em;
+        font-size: 0.5em;
         margin: 0 0 10%;
             
 

@@ -17,13 +17,18 @@ and (max-width:920px){
             position: absolute;
             z-index: 1;
             top: 15%;
-            left: 50%;
-            translate: -50% ;
+            left: 67%;
+            // translate: -50% ;
             
             // rotate: 90deg;
         }
        
     }
+    
+        #info{
+            font-size: 1em;
+        }
+    
    
     .box{
         display: block;

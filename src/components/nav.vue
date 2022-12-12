@@ -12,8 +12,12 @@
             </router-link>
             <li>{{date}}</li>
             <li id="btn">
-                <span @click="toggleMove" id="box" class="box">
-                    <span @click="toggleDark" id="ball"></span>
+                <span @click="toggleDark " id="box" class="box">
+                    <span @click="toggleMove" id="ball">
+                        <span @click="toggleDark" id="innerball">
+
+                        </span>
+                    </span>
                 </span>
             </li>
 
@@ -113,10 +117,6 @@ nav {
 
         p {
             font-size: 1.4em;
-            // align-items: center;
-            // display: flex;
-            // height: 100%;
-
         }
 
         &>li {
@@ -164,7 +164,7 @@ nav {
               transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
         margin-left: 60%;
         background: black;
-        // left: 80%;
+
         }
 
             &>span {
@@ -178,10 +178,12 @@ nav {
                 top: 50%;
                 translate: 0 -50%;
                 transition: all 1s;
+               
 
             }
 
         }
+        
 
         .active {
             background: blue;
