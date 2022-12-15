@@ -39,7 +39,7 @@
     </div>
 
 </div>
-<div class="box"></div>
+
 </template>
 
 <script>

@@ -4,6 +4,8 @@ import {
 } from 'vue-router';
 import {useDark, useToggle} from '@vueuse/core';
 import navView from './components/nav.vue';
+import Footerview from './components/footerview.vue';
+
 
 
 
@@ -44,6 +46,7 @@ import navView from './components/nav.vue';
 
     <router-view />
 </div>
+<Footerview></Footerview>
 </template>
 
 <style lang="scss" scoped>

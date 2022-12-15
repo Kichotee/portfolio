@@ -42,6 +42,7 @@
 
     </div>
 </div>
+
 </template>
 
 <script setup>
@@ -50,13 +51,12 @@ import {
 } from "../store/index.js";
 import {
     ref,
-    onMounted
-} from 'vue'
-onMounted(() => {
-    const right = document.getElementsByClassName('fa-arrow-right');
-    const left = document.getElementsByClassName('fa-arrow-left')
+    
+} from 'vue';
 
-})
+
+
+// Declare functions
 
 const currentData = ref(0);
 
@@ -72,7 +72,7 @@ const previousItem = () => {
         currentData.value = 0
     } else currentData.value--
 }
-console.log(currentData.value + 1, works.length);
+
 </script>
 
 <style lang="scss" scoped>
@@ -204,7 +204,7 @@ console.log(currentData.value + 1, works.length);
     }
    
 
-    .imgAnimate-enter-from,
+    .imgAnimate-enter-from
      {
         opacity: 0;
        transform: translateX(-450px);
