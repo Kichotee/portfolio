@@ -26,6 +26,10 @@ const router = createRouter({
             name: 'Sites',
             component: Sites
         },
+        {
+            path: '/*',
+            component:404
+        }
         
 
     ]
