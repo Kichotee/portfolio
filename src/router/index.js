@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import home from '../views/Home.vue';
 import about from '../views/About.vue';
 import Sites from '../views/Sites.vue';
+import notFound from '../views/notFound.vue';
 
 
 
@@ -27,8 +28,9 @@ const router = createRouter({
             component: Sites
         },
         {
-            path: '/*',
-            component:404
+            path: '/:catchAll(.*)',
+            name:'notFound',
+            component:notFound,
         }
         
 
