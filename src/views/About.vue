@@ -92,7 +92,7 @@ export default {
     grid-auto-rows: 50%;
     height: 80vh;
 
-    video {
+    p {
         overflow: scroll;
         grid-column: 3/-1;
         grid-row: 1/-1;
