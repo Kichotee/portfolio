@@ -1,7 +1,13 @@
 <template>
 <div class="container">
     <div class="container-box">
-        <video src=".././assets/images/20221207_132552_1.mp4" autoplay loop></video>
+        <p>
+        I am a junior developer with a passion for creating and building innovative software solutions. 
+        I have a strong foundation in computer science and am constantly seeking to expand my knowledge and skills in the field. 
+        I am a quick learner and thrive in collaborative environments where I can contribute my ideas and learn from my colleagues. 
+        In my previous projects, I have gained experience in languages such as JavaScript, css,tailwind and have worked on developing  front-end applications. I am excited to continue my journey as a developer 
+        and tackle new challenges that come my way.
+        </p>
         <div class="about">
             <p>
                 Frontend developer
