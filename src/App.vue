@@ -17,8 +17,18 @@ import Footerview from './components/footerview.vue';
     <navView :useToggle='useToggle' :useDark='useDark' />
     <div v-if="![`Sites`].includes($route.name)" class="text-box">
         <p>
-            TIMI
+            
+            <span>
+
+                TIMI
+            </span>
         </p>
+        <p>
+            <span >
+                Developer
+            </span>
+        </p>
+      
        
 
     </div>
@@ -58,6 +68,9 @@ import Footerview from './components/footerview.vue';
     a{
         color: $white !important
     }
+    p>span::after{
+        background-color: #121212 !important;
+    }
 }
 .dark .label p{
     color: $white !important;
@@ -69,19 +82,67 @@ import Footerview from './components/footerview.vue';
     background-color: $white;
     z-index: 3;
     transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-    
+    overflow: hidden;
 
     max-width: 100vw !important;
     
     .text-box {
         width: max-content;
-        height: max-content;
+        max-height: 90px;
+        overflow: hidden;
+        line-height: 90px;
+
         position: absolute;
         z-index: 1;
         top: 10%;
         left: 0%;
-        // rotate: 90deg;
+        p{
+            line-height: 60px;
+            // font-size: 1.2rem;
+            height: 100px;
+            position: relative;
+            // background: red;
+            top: 0;
+            overflow: hidden;
+            animation: slide steps(2) 7s infinite;
+        }
+        span{
+            font-size:70px;
+            
+        }
+       
+        @keyframes slide {
+            100%{
+                top: -180px;
+
+            }
+        }
+
+        p>span{
+            position: relative;
+
+        }
+        
+        p>span::after{
+            content: '';
+            background: $white;
+            width: 120%;
+            height: 100%;
+            border-left: solid;
+            position:absolute;
+            text-align:left;
+            left:0;
+            animation: typing steps(14) 3.5s infinite;
+            
+        }
+        @keyframes typing {
+            100%{
+                left: 120%;
+
+            }
+        }
     }
+
     .circle{
         height: 50vh;
         width: 50vh;
@@ -98,6 +159,7 @@ import Footerview from './components/footerview.vue';
         z-index: 1;
         color: lighten($color: $black, $amount: 80%);
         text-align: center;
+
 
     }
     marquee{

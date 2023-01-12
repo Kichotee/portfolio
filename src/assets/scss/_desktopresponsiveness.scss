@@ -205,13 +205,18 @@
         grid-template-columns: repeat(12,1fr);
         .about{
             grid-column: 1/4;
+            grid-row: 1/-1;
+
             justify-items: center;
         }
-        video {
+        .about-me {
             grid-column: 6/-1;
-            // orientation: landscape;
-    
+            grid-row: 1/-1;
+
             height: 100%;
+            p{
+                width: 60%;
+            }
     
         }
     }

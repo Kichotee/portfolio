@@ -1,13 +1,13 @@
 <template>
 <div class="error-page">
     <h4>
-        Uhm I have no idea what you're looking for shall we return
+        Uhm I have no idea what you're looking for. Shall we return?
     </h4>
 
     <i class="fa-solid fa-home"></i>
 
 </div>
->
+
 </template>
 
 <script setup>

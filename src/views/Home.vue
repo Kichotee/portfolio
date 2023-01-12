@@ -12,9 +12,6 @@
 
             <p id="info" ref="detailText"></p>
                 </div>
-
-               
-            
             </div>
             <ul>
 
@@ -49,7 +46,7 @@ import {ref, onMounted } from 'vue'
 export default {
     setup(){
         //
-         let text = 'Hi, Im Timi a frontend developer who builds usable and aesthetically pleasing web pages and as you can see i have a halo... or maybe you\'re on mobile'
+         let text = 'Hi, Im Timi a frontend developer building usable and aesthetically pleasing web pages and as you can see i have a halo... or maybe you\'re on mobile'
             let i =0;
         onMounted(()=>{
             const info = document.querySelector('#info')
