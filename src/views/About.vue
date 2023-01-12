@@ -55,7 +55,11 @@
                     </li>
                    
                 </ul>
-                Contact me <a href="mailto:timiprecious18@gmail.com">here</a>
+                <div class="">
+
+                    Contact me <a href="mailto:timiprecious18@gmail.com">here</a>
+                    <p><a href="https://docs.google.com/document/d/1ypAdP-fzGrTeDAWr7IT3ae7T3g4yt2_wVnhPnlr6Ye4/edit?usp=sharing"> View resume</a></p>
+                </div>
             </div>
         </div>
     </div>
