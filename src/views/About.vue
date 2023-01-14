@@ -1,15 +1,25 @@
 <template>
 <div class="container">
     <div class="container-box">
-        <video src=".././assets/images/20221207_132552_1.mp4" autoplay loop></video>
-        <div class="about">
-            <p>
+       <p>
+        Hello there, i see you've wandered into my personal space,glad to have you here. I'm Timi a frontend developer from Nigeria and this my ordered portfolio v1.0.
+ <br>
+ I could bore you with my skills in this little autobiography but i don't believe you are much a fan of boredom(if anyone ever is).
+ Asides editing sophisticated text files  to improve interaction on the Web, I'm enjoying literature, going down pre-renaissance and later art rabbit holes and hoping Real madrid doesn't hasten me to my grave.
+ 
+ <br>
+ <br>
+ If you enjoy what you just read i might have more here <a href="https://timithenigerian.substack.com/">here</a>
+ May the lights guide you
+       </p>
+        <transition-group tag="div" appear @before-enter="beforeEnter" @enter="onEnter" class="about" >
+            <p key="Title">
                 Frontend developer
             </p>
-            <h5>
+            <h5 key="subtitle">
                 Technologies include
             </h5>
-            <ul>
+            <ul key="list">
                 <li>
                     <em>
 
@@ -47,21 +57,36 @@
                     </li>
                    
                 </ul>
-                <div class="">
+                <div key="contact" class="">
 
                     Contact me <a href="mailto:timiprecious18@gmail.com">here</a>
                     <p><a href="https://docs.google.com/document/d/1ypAdP-fzGrTeDAWr7IT3ae7T3g4yt2_wVnhPnlr6Ye4/edit?usp=sharing"> View resume</a></p>
                 </div>
-            </div>
+            </transition-group>
         </div>
     </div>
 
 </template>
 
-<script>
-export default {
+<script setup>
+import gsap from 'gsap';
+import { ref } from 'vue';
+const beforeEnter=ref(null)
+const onEnter=ref(null)
 
-}
+
+beforeEnter.value=(el)=> gsap.from(el,{
+   opacity: 0,
+   y:'-100%'
+
+})
+onEnter.value =(el)=> gsap.to(el,{
+   opacity:1,
+   y:0,
+   ease:'bounce',
+   duration:14
+
+})
 </script>
 
 <style lang="scss" scoped>
@@ -84,7 +109,7 @@ export default {
     grid-template-rows: repeat(2,1fr);
     height: 80vh;
 
-    video {
+    p {
         overflow: scroll;
         grid-column: 3/-1;
         grid-row: 1/-1;

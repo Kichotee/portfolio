@@ -158,6 +158,7 @@ nav {
                 bottom: 10%;
 
                 position: absolute;
+                z-index: 5;
 
             }
               &>.move {
@@ -178,6 +179,7 @@ nav {
                 top: 50%;
                 translate: 0 -50%;
                 transition: all 1s;
+                z-index: 5;
                
 
             }
@@ -186,7 +188,7 @@ nav {
         
 
         .active {
-            background: blue;
+            background: red;
         }
 
       
