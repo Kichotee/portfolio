@@ -1,25 +1,17 @@
 <template>
-    <div class="container">
-        <div class="container-box">
-            <!-- <video src=".././assets/images/20221207_132552_1.mp4" autoplay loop></video> -->
-            <div class="about-me">
-
-                <p> hi, I'm Timi, a junior developer with a passion for creating and building innovative software solutions. 
-            I am quite versed with popular frontend frame-works and am constantly seeking to expand my knowledge and skills in the field. 
-            I am a quick learner and thrive in collaborative environments where I can contribute my ideas and learn from my colleagues. 
-            In my previous projects, I have gained experience in languages such as JavaScript, css,tailwind and have worked on developing  front-end applications. I am excited to continue my journey as a developer 
-            and tackle new challenges that come my way.</p>
-            </div>
-            <div class="about">
-                <p>
-                    Frontend developer
-                </p>
-                <h5>
-                    Technologies include
-                </h5>
-                <ul>
-                    <li>
-                        <em>
+<div class="container">
+    <div class="container-box">
+        <video src=".././assets/images/20221207_132552_1.mp4" autoplay loop></video>
+        <div class="about">
+            <p>
+                Frontend developer
+            </p>
+            <h5>
+                Technologies include
+            </h5>
+            <ul>
+                <li>
+                    <em>
 
                             Vue js
                         </em>
@@ -92,6 +84,13 @@ export default {
     grid-template-rows: repeat(2,1fr);
     height: 80vh;
 
+    video {
+        overflow: scroll;
+        grid-column: 3/-1;
+        grid-row: 1/-1;
+        width: 100%;
+        object-fit: cover;
+    }
 
     .about {
         grid-column: 1/3;
