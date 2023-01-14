@@ -34,8 +34,8 @@
         </marquee>
 
         <router-view />
+        <Footerview></Footerview>
     </div>
-    <Footerview></Footerview>
 </template>
 
 <script setup>
@@ -49,9 +49,9 @@ import {
     ref,
     onMounted
 } from 'vue';
-import {
+import 
     gsap
-} from 'gsap';
+ from 'gsap';
 import {
     TextPlugin
 } from 'gsap/TextPlugin'
