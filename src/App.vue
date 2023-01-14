@@ -1,33 +1,20 @@
-<script setup>
-import {
-    RouterView
-} from 'vue-router';
-import {useDark, useToggle} from '@vueuse/core';
-import navView from './components/nav.vue';
-import Footerview from './components/footerview.vue';
-
-
-
-
-</script>
 
 <template>
-<div class="wrapper " id="wrapper">
+    
+    <pageLoader v-if="loading==false"></pageLoader>
+<div v-if="loading" class="wrapper " id="wrapper">
 
-    <navView :useToggle='useToggle' :useDark='useDark' />
+
+    <navView/>
     <div v-if="![`Sites`].includes($route.name)" class="text-box">
-        <p>
+        <p  class="me" ref="me">
             
             <span>
 
-                TIMI
+                
             </span>
         </p>
-        <p>
-            <span >
-                Developer
-            </span>
-        </p>
+        
       
        
 
@@ -43,8 +30,8 @@ import Footerview from './components/footerview.vue';
     <div class="circle">
 
     </div>
-     <marquee behavior="" direction="left">
-
+    <marquee behavior="" direction="left">
+        
         <p class="bottom-text">
             FRONTEND DEVELOPER
         </p>
@@ -53,11 +40,67 @@ import Footerview from './components/footerview.vue';
        
             
         
-
+        
     <router-view />
 </div>
 <Footerview></Footerview>
 </template>
+<script setup>
+            import {
+                RouterView
+            } from 'vue-router';
+            import navView from './components/nav.vue';
+            import Footerview from './components/footerview.vue';
+            import pageLoader from './components/pageLoader.vue';
+            import { ref, onMounted } from 'vue';
+            import {gsap} from 'gsap';
+            import {TextPlugin} from 'gsap/TextPlugin'
+            gsap.registerPlugin(TextPlugin)
+            
+            
+            
+            
+            const loading = ref(false)
+            setInterval(()=>{
+                loading.value = true
+            
+            }, 5000)
+            const me = ref(null)
+            
+            const texts=['TIMI', 'Developer', 'Writer']
+            
+             
+            
+            let MasterTL = gsap.timeline({repeat:-1,yoyo:true});
+            onMounted(()=>{
+                const identity = document.querySelector('.text-box')
+
+                setTimeout(()=>{
+                    texts.forEach(text => {
+                       
+                      const tl= gsap.timeline({ yoyo:true})
+                      
+                      tl.from(`${loading.value==true?'.me': null}`,{
+                        duration:3,
+                        y:'100%',
+                      }).to(`${loading.value==true?'.me': null}`,{
+                        duration:3,
+                          y:0,
+                          yoyo:false
+                        }).to(`${loading.value==true?'.me': null}`,{
+                            
+                            duration:3,
+                            text:text
+                      })
+                          MasterTL.add(tl)
+                       });
+
+                },5000)
+           
+            
+            })
+            
+            </script>
 
 <style lang="scss" scoped>
 @import './assets/scss/colors.scss';
@@ -96,51 +139,50 @@ import Footerview from './components/footerview.vue';
         z-index: 1;
         top: 10%;
         left: 0%;
+        
         p{
             line-height: 60px;
-            // font-size: 1.2rem;
+            font-size: 5rem;
             height: 100px;
             position: relative;
-            // background: red;
             top: 0;
             overflow: hidden;
-            animation: slide steps(2) 7s infinite;
         }
-        span{
-            font-size:70px;
+        // span{
+        //     font-size:70px;
             
-        }
+        // }
        
-        @keyframes slide {
-            100%{
-                top: -180px;
+        // @keyframes slide {
+        //     100%{
+        //         top: -180px;
 
-            }
-        }
+        //     }
+        // }
 
-        p>span{
-            position: relative;
+        // p>span{
+        //     position: relative;
 
-        }
+        // }
         
-        p>span::after{
-            content: '';
-            background: $white;
-            width: 120%;
-            height: 100%;
-            border-left: solid;
-            position:absolute;
-            text-align:left;
-            left:0;
-            animation: typing steps(14) 3.5s infinite;
+        // p>span::after{
+        //     content: '';
+        //     background: $white;
+        //     width: 120%;
+        //     height: 100%;
+        //     border-left: solid;
+        //     position:absolute;
+        //     text-align:left;
+        //     left:0;
+        //     animation: typing steps(14) 3.5s infinite;
             
-        }
-        @keyframes typing {
-            100%{
-                left: 120%;
+        // }
+        // @keyframes typing {
+        //     100%{
+        //         left: 120%;
 
-            }
-        }
+        //     }
+        // }
     }
 
     .circle{

@@ -42,23 +42,24 @@
 <script>
 import { RouterView, RouterLink } from "vue-router";
 import {ref, onMounted } from 'vue'
+import {gsap} from 'gsap';
+import {TextPlugin} from 'gsap/TextPlugin'
 
 export default {
     setup(){
         //
+        gsap.registerPlugin(TextPlugin)
          let text = 'Hi, Im Timi a frontend developer building usable and aesthetically pleasing web pages and as you can see i have a halo... or maybe you\'re on mobile'
-            let i =0;
+
+            let masterTL = gsap.timeline({repeat:-1, yoyo:true})
         onMounted(()=>{
             const info = document.querySelector('#info')
-           
-           const textInt=  setInterval(() => {
-                info.innerHTML += text[i];
-                i++;
-
-                if (i===text.length) {
-                    clearInterval(textInt) 
-                }
-            }, 100);
+          let tl= gsap.timeline({repeat:1, yoyo:true})
+          tl.to(info,{
+            duration:15,
+            text:text
+          })
+          masterTL.add(tl)
         })
     }
 
@@ -118,7 +119,6 @@ export default {
     width: 100%;
    font-size: 0.8em;
     .paragraph-box{
-            background-color: blue;
             height: 70%;
             padding: 2.5% 5%;
 
