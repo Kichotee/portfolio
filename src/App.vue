@@ -50,7 +50,7 @@ import {
     onMounted
 } from 'vue';
 import 
-    gsap
+    {gsap}
  from 'gsap';
 import {
     TextPlugin

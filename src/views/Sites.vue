@@ -60,7 +60,7 @@
 </template>
 
 <script setup>
-	import gsap from "gsap";
+	import {gsap} from "gsap";
 	import TextPlugin from "gsap/TextPlugin";
 	import { useDataStore } from "../store/index.js";
 	import { ref, onMounted, computed } from "vue";
