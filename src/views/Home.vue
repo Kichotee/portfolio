@@ -121,8 +121,10 @@
 		height: 100%;
 		width: 100%;
 		font-size: 0.8em;
-		.paragraph-box {
-			height: 70%;
+		.paragraph {
+			max-height: 30%;
+			width: 90%;
+			min-height: 30%  !important;
 			padding: 2.5% 5%;
 		}
 		p {
@@ -134,6 +136,8 @@
 			flex-direction: column;
 			gap: 2vh;
 			width: 100%;
+			height: 40%;
+			
 			align-items: center;
 		}
 		li {

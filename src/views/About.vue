@@ -116,7 +116,7 @@ onEnter.value =(el)=> gsap.to(el,{
     .about {
         grid-column: 1/3;
         overflow: scroll;
-        grid-row: 2/-1;
+        grid-row: 3/-1;
         text-align: right;
         position: relative;
         z-index: 30;
