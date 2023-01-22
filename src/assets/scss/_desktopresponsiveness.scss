@@ -60,6 +60,21 @@
         .label{
             top: 10%;
             left: 8%;
+            width: 5%;
+           p{
+            text-align: left;
+           }
+        }
+        .toggle{
+            top: 10%;
+            right: 5%;
+           p{
+            text-align: center;
+           }
+        }
+        .label{
+            top: 10%;
+            left: 8%;
            
         }
         cursor{
@@ -206,9 +221,28 @@
         }
         .tool-box{
             flex-direction: row;
-            width: 70%;
+            width: 80%;
+            height: 25%;
+            justify-content: space-between;
+            align-items: center;
+         h4{
+            font-size: larger;
+            text-transform: capitalize;
+         }
             .buttons{
                 flex-direction: row;
+            }
+            .description{
+                padding:0;
+                height: 50%;
+                display: flex;
+                align-items:center;
+                width: 100%;
+                justify-content: center;
+
+            }
+            .tools{
+                height: 50%;
             }
         }
        
@@ -221,19 +255,16 @@
 
             justify-items: center;
         }
-        p {
+        .about-me {
             grid-column: 6/-1;
             grid-row: 1/-1;
-
             height: 100%;
-            p{
-                width: 60%;
-            }
+            
     
         }
     }
     .links{
-        bottom: 2.5%;
+        top: 0%;
         width: 20vw;
     }
 

@@ -17,6 +17,14 @@
             <p>
                 home
             </p>
+            
+        </div>
+        <div class="toggle">
+            <i class="fa-solid fa-arrow-up"></i>
+            <p>
+                toggle
+            </p>
+
         </div>
 
         <div class="circle">
@@ -33,7 +41,7 @@
 
         </marquee>
 
-        <router-view />
+        <router-view v-slot="{component}" ></router-view>
         <Footerview></Footerview>
     </div>
 </template>
@@ -70,6 +78,8 @@ let MasterTL = gsap.timeline({
     repeat: -1,
     yoyo: true
 });
+    // let cursor= document.querySelector('.cursor')
+
 onMounted(() => {
 
     setTimeout(() => {
@@ -99,16 +109,16 @@ onMounted(() => {
             }
         })
         
-        const cursor= document.querySelector('.cursor')
-        document.onmousemove= function(e){
-            cursor.style.left=e.pageX + 'px'
-            cursor.style.top=e.pageY + 'px'
-        }
     }, 5000)
 
+       
+
+      
+   })
 
 
-})
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -177,12 +187,11 @@ onMounted(() => {
     .cursor{
         height: 25px;
         width: 25px;
-        background-color: $black;
+        background-color: red;
         border-radius: 50%;
-        position: absolute;
-        left: 50px;
+       position:relative;
         transition: 0.5s ease-in-out;
-        display: none;
+        // z-index:500;
     }
 
     p {
@@ -210,6 +219,19 @@ onMounted(() => {
 
         }
     }
+    .toggle {
+        position: absolute;
+        right: 4.5%;
+        top: 5%;
+
+        p {
+            font-size: 0.7rem;
+            color: $black;
+
+
+        }
+    }
+  
 
     // darkmode button style
     #btn {

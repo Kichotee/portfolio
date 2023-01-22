@@ -1,14 +1,11 @@
 <template>
 <div class="container">
     <div class="container-box">
-       <p>
-        Hello there, i see you've wandered into my personal space,glad to have you here. I'm Timi a frontend developer from Nigeria and this my ordered portfolio v1.0.
+       <p class="about-me">
+        Hello there, i see you've wandered into my space of self exhibition, glad to have you here. I'm Timi a frontend developer from Nigeria and this my ordered portfolio v1.0.
  <br>
  I could bore you with my skills in this little autobiography but i don't believe you are much a fan of boredom(if anyone ever is).
  Asides editing sophisticated text files  to improve interaction on the Web, I'm enjoying literature, going down pre-renaissance and later art rabbit holes and hoping Real madrid doesn't hasten me to my grave.
- 
- <br>
- <br>
  If you enjoy what you just read i might have more here <a href="https://timithenigerian.substack.com/">here</a>
  May the lights guide you
        </p>
@@ -106,21 +103,20 @@ onEnter.value =(el)=> gsap.to(el,{
 .container-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(5,1fr);
     height: 80vh;
 
-    p {
+    .about-me {
         overflow: scroll;
         grid-column: 3/-1;
-        grid-row: 1/-1;
-        width: 100%;
-        object-fit: cover;
+        grid-row: 1/4;
+        height: 100%;
     }
 
     .about {
         grid-column: 1/3;
         overflow: scroll;
-        grid-row: -1;
+        grid-row: 2/-1;
         text-align: right;
         position: relative;
         z-index: 30;
@@ -128,9 +124,7 @@ onEnter.value =(el)=> gsap.to(el,{
         
 
 
-        p {
-            font-size: 2rem;
-        }
+       
     }
 
     .about::-webkit-scrollbar {
@@ -142,11 +136,7 @@ onEnter.value =(el)=> gsap.to(el,{
     }
     .about-me{
 
-        overflow: scroll;
-        grid-column: 3/-1;
-        grid-row: 1/-1;
-        width: 100%;
-        padding: 0 0 1rem;
+       
         &::-webkit-scrollbar{
             width: 0;
 

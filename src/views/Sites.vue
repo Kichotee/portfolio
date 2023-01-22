@@ -51,7 +51,7 @@
 							>
 						</div>
 						<p class="description">{{ work.description }}</p>
-						<p>Tools: {{ work.tools }}</p>
+						<p class="tools"> {{ work.tools }}</p>
 					</div>
 				</div>
 			</div>
@@ -181,7 +181,7 @@
 			justify-content: space-evenly;
 
 			order: 3;
-			width: 100%;
+		
 			// border: solid;
 
 			gap: 2.5%;
@@ -244,23 +244,7 @@
 			);
 		}
 
-		// .imgAnimate-enter-from
-		//  {
-		//     opacity: 0;
-		//    transform: translateX(-450px);
-
-		// }
-		// .imgAnimate-leave-to{
-		//       opacity: 0;
-		//    transform: translateX(450px);
-
-		// }
-
-		// .imgAnimate-enter-active,
-		// .imgAnimate-leave-active,
-		// .imgAnimate-move {
-		//     transition: all 0.8s ease;
-		// }
+		
 		.description {
 			padding: 2% 0 5%;
 		}

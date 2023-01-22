@@ -67,12 +67,12 @@
 
 				const image =
 					document.querySelector("img");
-				// if (route.name == "Home") {
-				// 	document.onmousemove = (e) => {
-				// 		image.style.rotate =
-				// 			-e.pageX / 50 + "deg";
-				// 	};
-				// }
+				
+					document.onmousemove = (e) => {
+						image.style.rotate =
+							-e.pageX / 50 + "deg";
+					};
+				// 
 			});
 		},
 	};
