@@ -29,6 +29,16 @@ export const useDataStore = defineStore({
 
 
         },
+        {
+            title: 'Ok-Shop',
+            description: 'An E-commerce website',
+            tools: 'nuxt3, vue3, composition-api, pinia, tailwind, vite',
+            bg: '/assets/images/bg-4.png',
+            link:'https://appspace-tourism.netlify.app/',
+            git:'https://github.com/Kichotee/space-agency'
+
+
+        },
         ]
     })
 })
