@@ -33,8 +33,8 @@ export const useDataStore = defineStore({
             title: 'Ok-Shop',
             description: 'An E-commerce website',
             tools: 'nuxt3, vue3, composition-api, pinia, tailwind, vite',
-            bg: '/assets/images/bg-4.jpg',
-            link:'https://ok-shop.app.netlify.app/',
+            bg: '/assets/images/bg-4.png',
+            link:'https://ok-shop-app.netlify.app/',
             git:'https://github.com/Kichotee/ok.shop'
 
 
