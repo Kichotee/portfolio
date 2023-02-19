@@ -39,6 +39,16 @@ export const useDataStore = defineStore({
 
 
         },
+        {
+            title: 'Aphrodite',
+            description: 'Landing-page for Skincare store',
+            tools: ' vue3, composition-api, css, vite, gsap',
+            bg: '/assets/images/bg-5.png',
+            link:'https://ok-shop-app.netlify.app/',
+            git:'https://github.com/Kichotee/skincare-updated'
+
+
+        },
         ]
     })
 })
